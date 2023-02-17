@@ -12,9 +12,9 @@ public class StudentService
     {
         Students = new List<Student>
         {
-            new Student { Id = 1, name = "dali", specialty = "CS" },
-            new Student { Id = 2, name = "salma", specialty = "Science" },
-            new Student { Id = 3, name = "leila", specialty = "Ae" },
+            new Student { Id = 1, Name = "dali", Specialty = "CS" },
+            new Student { Id = 2, Name = "salma", Specialty = "Science" },
+            new Student { Id = 3, Name = "leila", Specialty = "Ae" },
         };
     }
 

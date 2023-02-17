@@ -11,5 +11,6 @@ namespace api.Data
         }
 
         public DbSet<Pizza> Pizzas { get; set; }
+        public DbSet<Student> Students { get; set; }
     }
 }

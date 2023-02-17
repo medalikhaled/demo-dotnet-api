@@ -78,34 +78,20 @@ public class PizzaController : ControllerBase
 
 
 
-    /*
-   [HttpPut("{id}")]
-   public IActionResult Update(int id, Pizza pizza)
+
+    [HttpDelete("{id}")]
+   public async Task<IActionResult> Delete(int id)
    {
-       if (id != pizza.Id)
-           return BadRequest();
+       var pizza = await _db.Pizzas.FindAsync(id);
 
-       var existingPizza = PizzaService.Get(id);
-
-       if(existingPizza is null)
-           return NotFound();
-
-       PizzaService.Update(pizza);           
-
-       return NoContent();
-
-   }
-
-   [HttpDelete("{id}")]
-   public IActionResult Delete(int id)
-   {
-       var pizza = PizzaService.Get(id);
        if (pizza is null)
            return NotFound();
 
-       PizzaService.Delete(id);
+       _db.Pizzas.Remove(pizza);
+        await _db.SaveChangesAsync();
+
        return NoContent();
    }
-   */
+   
 
 }
